@@ -1,0 +1,78 @@
+Fizzbuzz LLM Benchmark
+============================================================
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing gpt-3.5-turbo
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'buzz'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said '7'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said 'buzz' (expected 'buzz')
+Turn 11: User said '11'
+Turn 12: LLM said 'fizz' (expected 'fizz')
+Turn 13: User said '13'
+Turn 14: LLM said '14' (expected '14')
+Turn 15: User said 'fizzbuzz'
+Turn 16: LLM said '16' (expected '16')
+Turn 17: User said '17'
+Turn 18: LLM said 'fizz' (expected 'fizz')
+Turn 19: User said '19'
+Turn 20: LLM said 'buzz' (expected 'buzz')
+Turn 21: User said 'fizz'
+Turn 22: LLM said '22' (expected '22')
+Turn 23: User said '23'
+Turn 24: LLM said 'fizz' (expected 'fizz')
+Turn 25: User said 'buzz'
+Turn 26: LLM said '26' (expected '26')
+Turn 27: User said 'fizz'
+Turn 28: LLM said '28' (expected '28')
+Turn 29: User said '29'
+Turn 30: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 31: User said '31'
+Turn 32: LLM said '32' (expected '32')
+Turn 33: User said 'fizz'
+Turn 34: LLM said '34' (expected '34')
+Turn 35: User said 'buzz'
+Turn 36: LLM said 'fizz' (expected 'fizz')
+Turn 37: User said '37'
+Turn 38: LLM said '38' (expected '38')
+Turn 39: User said 'fizz'
+Turn 40: LLM said 'buzz' (expected 'buzz')
+Turn 41: User said '41'
+Turn 42: LLM said 'fizz' (expected 'fizz')
+Turn 43: User said '43'
+Turn 44: LLM said '44' (expected '44')
+Turn 45: User said 'fizzbuzz'
+Turn 46: LLM said '46' (expected '46')
+Turn 47: User said '47'
+Turn 48: LLM said 'fizz' (expected 'fizz')
+Turn 49: User said '49'
+Turn 50: LLM said 'buzz' (expected 'buzz')
+Turn 51: User said 'fizz'
+Turn 52: LLM said '52' (expected '52')
+Turn 53: User said '53'
+Turn 54: LLM said 'fizz' (expected 'fizz')
+Turn 55: User said 'buzz'
+Turn 56: LLM said '56' (expected '56')
+Turn 57: User said 'fizz'
+Turn 58: LLM said '58' (expected '58')
+Turn 59: User said '59'
+Turn 60: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 61: User said '61'
+Turn 62: LLM said '62' (expected '62')
+Turn 63: User said 'fizz'
+Turn 64: LLM said 'buzz' (expected '64')
+FAILED at turn 64!
+Expected: 64
+ Got: buzz
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=5
+============================================================
+gpt-3.5-turbo: 63 correct turns
+============================================================

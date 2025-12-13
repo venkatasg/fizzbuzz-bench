@@ -1,0 +1,112 @@
+Fizzbuzz LLM Benchmark
+============================================================
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing claude-3-7-sonnet-20250219
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'buzz'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said '7'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said 'buzz' (expected 'buzz')
+Turn 11: User said '11'
+Turn 12: LLM said 'fizz' (expected 'fizz')
+Turn 13: User said '13'
+Turn 14: LLM said '14' (expected '14')
+Turn 15: User said 'fizzbuzz'
+Turn 16: LLM said '16' (expected '16')
+Turn 17: User said '17'
+Turn 18: LLM said 'fizz' (expected 'fizz')
+Turn 19: User said '19'
+Turn 20: LLM said 'buzz' (expected 'buzz')
+Turn 21: User said 'fizz'
+Turn 22: LLM said '22' (expected '22')
+Turn 23: User said '23'
+Turn 24: LLM said 'fizz' (expected 'fizz')
+Turn 25: User said 'buzz'
+Turn 26: LLM said '26' (expected '26')
+Turn 27: User said 'fizz'
+Turn 28: LLM said '28' (expected '28')
+Turn 29: User said '29'
+Turn 30: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 31: User said '31'
+Turn 32: LLM said '32' (expected '32')
+Turn 33: User said 'fizz'
+Turn 34: LLM said '34' (expected '34')
+Turn 35: User said 'buzz'
+Turn 36: LLM said 'fizz' (expected 'fizz')
+Turn 37: User said '37'
+Turn 38: LLM said '38' (expected '38')
+Turn 39: User said 'fizz'
+Turn 40: LLM said 'buzz' (expected 'buzz')
+Turn 41: User said '41'
+Turn 42: LLM said 'fizz' (expected 'fizz')
+Turn 43: User said '43'
+Turn 44: LLM said '44' (expected '44')
+Turn 45: User said 'fizzbuzz'
+Turn 46: LLM said '46' (expected '46')
+Turn 47: User said '47'
+Turn 48: LLM said 'fizz' (expected 'fizz')
+Turn 49: User said '49'
+Turn 50: LLM said 'buzz' (expected 'buzz')
+Turn 51: User said 'fizz'
+Turn 52: LLM said '52' (expected '52')
+Turn 53: User said '53'
+Turn 54: LLM said 'fizz' (expected 'fizz')
+Turn 55: User said 'buzz'
+Turn 56: LLM said '56' (expected '56')
+Turn 57: User said 'fizz'
+Turn 58: LLM said '58' (expected '58')
+Turn 59: User said '59'
+Turn 60: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 61: User said '61'
+Turn 62: LLM said '62' (expected '62')
+Turn 63: User said 'fizz'
+Turn 64: LLM said '64' (expected '64')
+Turn 65: User said 'buzz'
+Turn 66: LLM said 'fizz' (expected 'fizz')
+Turn 67: User said '67'
+Turn 68: LLM said '68' (expected '68')
+Turn 69: User said 'fizz'
+Turn 70: LLM said 'buzz' (expected 'buzz')
+Turn 71: User said '71'
+Turn 72: LLM said 'fizz' (expected 'fizz')
+Turn 73: User said '73'
+Turn 74: LLM said '74' (expected '74')
+Turn 75: User said 'fizzbuzz'
+Turn 76: LLM said '76' (expected '76')
+Turn 77: User said '77'
+Turn 78: LLM said 'fizz' (expected 'fizz')
+Turn 79: User said '79'
+Turn 80: LLM said 'buzz' (expected 'buzz')
+Turn 81: User said 'fizz'
+Turn 82: LLM said '82' (expected '82')
+Turn 83: User said '83'
+Turn 84: LLM said 'fizz' (expected 'fizz')
+Turn 85: User said 'buzz'
+Turn 86: LLM said '86' (expected '86')
+Turn 87: User said 'fizz'
+Turn 88: LLM said '88' (expected '88')
+Turn 89: User said '89'
+Turn 90: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 91: User said '91'
+Turn 92: LLM said '92' (expected '92')
+Turn 93: User said 'fizz'
+Turn 94: LLM said '94' (expected '94')
+Turn 95: User said 'buzz'
+Turn 96: LLM said 'fizz' (expected 'fizz')
+Turn 97: User said '97'
+Turn 98: LLM said '98' (expected '98')
+Turn 99: User said 'fizz'
+Turn 100: LLM said 'buzz' (expected 'buzz')
+Turn 101: User said '101'
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=5
+============================================================
+claude-3-7-sonnet-20250219: 100 correct turns
+============================================================

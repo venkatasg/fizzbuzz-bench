@@ -1,14 +1,24 @@
-#!/usr/bin/env python3
 """
 Fizzbuzz Benchmark for LLMs
 Tests OpenAI, Anthropic, and Together AI APIs on the classic Fizzbuzz game.
 """
 
 import argparse
+import os
 from openai import OpenAI
 from anthropic import Anthropic
 from together import Together
 import ipdb
+
+# Global log file handle
+_log_file = None
+
+def log_print(message):
+    """Print to console and log file simultaneously."""
+    print(message)
+    if _log_file:
+        _log_file.write(message + '\n')
+        _log_file.flush()
 
 def get_fizzbuzz_response(number: int, fizz_num: int = 3, buzz_num: int = 5) -> str:
     """
@@ -46,7 +56,7 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
         fizz_num: The number to check for "fizz" (default: 3)
         buzz_num: The number to check for "buzz" (default: 5)
     """
-    print(f"Testing {model_name}")
+    log_print(f"Testing {model_name}")
 
     # Initial system message and first user turn
     system_prompt = f"""You are playing FizzBuzz with the following rules:
@@ -55,9 +65,7 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
     - If a number is divisible by both {fizz_num} and {buzz_num}, say 'fizzbuzz'
     - Otherwise, say the number itself
     
-    I will give you a number, and you must respond with the NEXT number in the sequence following these rules.
-    
-    Respond with ONLY the answer - just the number, 'fizz', 'buzz', or 'fizzbuzz'. No explanations, no additional text, no punctuation."""
+    I will give you a number, and you must respond with the NEXT number (or word) in the sequence following these rules. Respond with ONLY the answer - just the number, 'fizz', 'buzz', or 'fizzbuzz'. No explanations, no additional text, no punctuation."""
     
     if model_name.startswith('claude'):
         # Anthropic messages API doesn't allow system role
@@ -85,13 +93,13 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
         try:
             if model_name.startswith('gpt'):
                 # OpenAI API
-                response = client.chat.completions.create(
+                response = client.responses.create(
                     model=model_name,
-                    messages=messages,
+                    input=messages,
                     temperature=0,
-                    max_completion_tokens=16
+                    max_output_tokens=16
                 )
-                llm_response = response.choices[0].message.content
+                llm_response = response.output[0].content[0].text
             
             elif model_name.startswith('claude'):
                 # Anthropic API
@@ -104,7 +112,7 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
                 )
                 llm_response = response.content[0].text
             else:
-                # Together API. Only difference from openai is max_tokens
+                # Together API. Only difference from openai is max_tokens param name
                 response = client.chat.completions.create(
                     model=model_name,
                     messages=messages,
@@ -115,7 +123,7 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
             
             expected = get_fizzbuzz_response(turn, fizz_num, buzz_num)
 
-            print(f"Turn {turn}: LLM said '{llm_response}' (expected '{expected}')")
+            log_print(f"Turn {turn}: LLM said '{llm_response}' (expected '{expected}')")
 
             # Normalize responses for comparison (case-insensitive)
             llm_normalized = llm_response.lower().strip()
@@ -123,9 +131,9 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
 
             # Check if response is correct
             if llm_normalized != expected_normalized:
-                print(f"FAILED at turn {turn}!")
-                print(f"Expected: {expected}")
-                print(f" Got: {llm_response}")
+                log_print(f"FAILED at turn {turn}!")
+                log_print(f"Expected: {expected}")
+                log_print(f" Got: {llm_response}")
                 return turn - 1  # Return the last correct turn
 
             # Add LLM response to messages
@@ -142,7 +150,7 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
                 "content": user_response
             })
 
-            print(f"Turn {turn}: User said '{user_response}'")
+            log_print(f"Turn {turn}: User said '{user_response}'")
 
             # Move to next LLM turn
             turn += 1
@@ -151,12 +159,13 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
                 return 100
 
         except Exception as e:
-            print(f"ERROR at turn {turn}: {e}")
+            log_print(f"ERROR at turn {turn}: {e}")
             return turn - 1
 
 
 def main():
-    """Run the Fizzbuzz benchmark across all APIs."""
+    global _log_file
+
     # Parse command line arguments
     parser = argparse.ArgumentParser(
         description="Benchmark LLMs on the Fizzbuzz game",
@@ -190,10 +199,17 @@ Examples:
 
     args = parser.parse_args()
 
-    print("Fizzbuzz LLM Benchmark")
-    print("=" * 60)
-    print(f"Game Rules: fizz={args.fizz_num}, buzz={args.buzz_num}")
-    print("=" * 60)
+    # Create logs directory if it doesn't exist
+    os.makedirs('logs', exist_ok=True)
+
+    # Open log file for this model
+    log_filename = f"logs/{args.model.replace('/', '_')}" + f"_fizz_{args.fizz_num}_buzz_{args.buzz_num}" + ".log"
+    _log_file = open(log_filename, 'w')
+
+    log_print("Fizzbuzz LLM Benchmark")
+    log_print("=" * 60)
+    log_print(f"Game Rules: fizz={args.fizz_num}, buzz={args.buzz_num}")
+    log_print("=" * 60)
     
     if args.model.startswith('gpt'):
         # Initialize OpenAI client
@@ -219,13 +235,18 @@ Examples:
     )
 
     # Print final results
-    print(f"\n{'='*60}")
-    print("FINAL RESULTS")
-    print(f"Game Rules: fizz={args.fizz_num}, buzz={args.buzz_num}")
-    print('='*60)
-    print(f"{args.model}: {score} correct turns")
-    print('='*60)
-    with open('RESULTS.md', 'a') as f:
+    log_print(f"\n{'='*60}")
+    log_print("FINAL RESULTS")
+    log_print(f"Game Rules: fizz={args.fizz_num}, buzz={args.buzz_num}")
+    log_print('='*60)
+    log_print(f"{args.model}: {score} correct turns")
+    log_print('='*60)
+
+    # Close log file
+    if _log_file:
+        _log_file.close()
+
+    with open('RESULTS.log', 'a') as f:
         f.write(f"{args.model}: {score} correct turns for fizz:{args.fizz_num} and buzz: {args.buzz_num}\n")
 
 if __name__ == "__main__":

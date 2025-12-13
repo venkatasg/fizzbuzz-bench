@@ -1,0 +1,18 @@
+Fizzbuzz LLM Benchmark
+============================================================
+Game Rules: fizz=3, buzz=7
+============================================================
+Testing gpt-4.1-nano
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said 'buzz' (expected '4')
+FAILED at turn 4!
+Expected: 4
+ Got: buzz
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=7
+============================================================
+gpt-4.1-nano: 3 correct turns
+============================================================

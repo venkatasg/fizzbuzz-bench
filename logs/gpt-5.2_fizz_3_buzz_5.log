@@ -1,0 +1,20 @@
+Fizzbuzz LLM Benchmark
+============================================================
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing gpt-5.2
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'buzz'
+Turn 6: LLM said '7' (expected 'fizz')
+FAILED at turn 6!
+Expected: fizz
+ Got: 7
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=5
+============================================================
+gpt-5.2: 5 correct turns
+============================================================
