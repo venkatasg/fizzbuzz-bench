@@ -1,0 +1,21 @@
+Fizzbuzz LLM Benchmark
+============================================================
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing google/gemma-3-27b-it
+Turn 2: LLM said '2
+' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'buzz'
+Turn 6: LLM said '6' (expected 'fizz')
+FAILED at turn 6!
+Expected: fizz
+ Got: 6
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=5
+============================================================
+google/gemma-3-27b-it: 5 correct turns
+============================================================

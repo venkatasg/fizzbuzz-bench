@@ -45,7 +45,7 @@ def get_fizzbuzz_response(number: int, fizz_num: int = 3, buzz_num: int = 5) -> 
         return str(number)
 
 
-def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int = 5) -> int:
+def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int = 5, local:bool = False) -> int:
     """
     Run a Fizzbuzz game with an LLM and return the turn number where it failed.
     Returns 0 if it fails on the first turn, or the turn number of the last correct answer.
@@ -91,7 +91,7 @@ def run_fizzbuzz_game(client, model_name: str, fizz_num: int = 3, buzz_num: int 
 
     while True:
         try:
-            if model_name.startswith('gpt'):
+            if model_name.startswith('gpt') or local:
                 # OpenAI API
                 response = client.responses.create(
                     model=model_name,
@@ -196,6 +196,11 @@ Examples:
         default="gpt-5.2",
         help="Model to use. "
     )
+    parser.add_argument(
+        "--local",
+        action="store_true",
+        help="Run inference on a local model served using vLLM"
+    )
 
     args = parser.parse_args()
 
@@ -216,6 +221,11 @@ Examples:
         with open('../../Research/openai.txt', 'r') as f:
             api_key = f.read().strip()
         client = OpenAI(api_key=api_key)
+    elif args.local:
+        client = OpenAI( 
+            base_url="http://localhost:8000/v1",
+            api_key="abc123",
+            )
     elif args.model.startswith('claude'):
         # Initialize Anthropic client
         with open('../../Research/anthropic.txt', 'r') as f:
@@ -231,7 +241,8 @@ Examples:
         client,
         args.model,
         args.fizz_num,
-        args.buzz_num
+        args.buzz_num,
+        args.local
     )
 
     # Print final results

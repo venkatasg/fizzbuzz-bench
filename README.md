@@ -68,6 +68,7 @@ Spoiler: Claude Sonnet 4 (and Opus 4.5) are the best at the standard and modifie
 |-------|--------------------------|---------------|
 | `deepseek-ai/DeepSeek-V3-0324` | 43 | 9 |
 | `deepseek-ai/DeepSeek-V3.1` | 100 | 5 |
+| `google/gemma-3-27b-it` | 5 | 5 |
 | `meta-llama/Llama-3.3-70B-Instruct-Turbo` | 3 | 3 |
 | `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | 5 | 41 |
 | `moonshotai/Kimi-K2-Instruct-0905` | 100 | 3 |
