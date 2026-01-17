@@ -1,20 +1,28 @@
-Fizzbuzz LLM Benchmark - OpenAI Responses API
+Fizzbuzz LLM Benchmark - Together AI API
 ============================================================
 Game Rules: fizz=3, buzz=5
 ============================================================
-Testing gpt-5.2
+Testing zai-org/GLM-4.7
 Turn 2: LLM said '2' (expected '2')
 Turn 3: User said 'fizz'
 Turn 4: LLM said '4' (expected '4')
 Turn 5: User said 'buzz'
-Turn 6: LLM said 'buzz' (expected 'fizz')
-FAILED at turn 6!
-Expected: fizz
- Got: buzz
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said '7'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said 'buzz' (expected 'buzz')
+Turn 11: User said '11'
+Turn 12: LLM said 'fizz' (expected 'fizz')
+Turn 13: User said '13'
+Turn 14: LLM said '' (expected '14')
+FAILED at turn 14!
+Expected: 14
+ Got: 
 
 ============================================================
 FINAL RESULTS
 Game Rules: fizz=3, buzz=5
 ============================================================
-gpt-5.2: 5 correct turns
+zai-org/GLM-4.7: 13 correct turns
 ============================================================

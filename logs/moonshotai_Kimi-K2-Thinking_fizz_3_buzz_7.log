@@ -1,8 +1,8 @@
-Fizzbuzz LLM Benchmark - OpenAI Responses API
+Fizzbuzz LLM Benchmark - Together AI API
 ============================================================
 Game Rules: fizz=3, buzz=7
 ============================================================
-Testing gpt-5.2
+Testing moonshotai/Kimi-K2-Thinking
 Turn 2: LLM said '2' (expected '2')
 Turn 3: User said 'fizz'
 Turn 4: LLM said '4' (expected '4')
@@ -13,14 +13,26 @@ Turn 8: LLM said '8' (expected '8')
 Turn 9: User said 'fizz'
 Turn 10: LLM said '10' (expected '10')
 Turn 11: User said '11'
-Turn 12: LLM said 'fizzbuzz' (expected 'fizz')
-FAILED at turn 12!
+Turn 12: LLM said 'fizz' (expected 'fizz')
+Turn 13: User said '13'
+Turn 14: LLM said 'buzz' (expected 'buzz')
+Turn 15: User said 'fizz'
+Turn 16: LLM said '16' (expected '16')
+Turn 17: User said '17'
+Turn 18: LLM said 'fizz' (expected 'fizz')
+Turn 19: User said '19'
+Turn 20: LLM said '20' (expected '20')
+Turn 21: User said 'fizzbuzz'
+Turn 22: LLM said '22' (expected '22')
+Turn 23: User said '23'
+Turn 24: LLM said '22' (expected 'fizz')
+FAILED at turn 24!
 Expected: fizz
- Got: fizzbuzz
+ Got: 22
 
 ============================================================
 FINAL RESULTS
 Game Rules: fizz=3, buzz=7
 ============================================================
-gpt-5.2: 11 correct turns
+moonshotai/Kimi-K2-Thinking: 23 correct turns
 ============================================================

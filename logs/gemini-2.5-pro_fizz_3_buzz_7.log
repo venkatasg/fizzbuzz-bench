@@ -1,20 +1,22 @@
-Fizzbuzz LLM Benchmark - OpenAI Responses API
+Fizzbuzz LLM Benchmark - Google Gemini API
 ============================================================
-Game Rules: fizz=3, buzz=5
+Game Rules: fizz=3, buzz=7
 ============================================================
-Testing gpt-5.2
+Testing gemini-2.5-pro
 Turn 2: LLM said '2' (expected '2')
 Turn 3: User said 'fizz'
 Turn 4: LLM said '4' (expected '4')
-Turn 5: User said 'buzz'
-Turn 6: LLM said 'buzz' (expected 'fizz')
-FAILED at turn 6!
-Expected: fizz
- Got: buzz
+Turn 5: User said '5'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said 'buzz'
+Turn 8: LLM said 'fizz' (expected '8')
+FAILED at turn 8!
+Expected: 8
+ Got: fizz
 
 ============================================================
 FINAL RESULTS
-Game Rules: fizz=3, buzz=5
+Game Rules: fizz=3, buzz=7
 ============================================================
-gpt-5.2: 5 correct turns
+gemini-2.5-pro: 7 correct turns
 ============================================================

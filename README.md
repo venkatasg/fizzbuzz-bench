@@ -41,14 +41,15 @@ I report the number of turns until the model returned the wrong answer for its t
 
 | Model | Standard FizzBuzz | Buzz=7|
 |-------|--------------------------|---------------|
-| `gpt-5.2` | 5 | 5 |
+| `gpt-5.2-pro` | **100** | **100** |
+| `gpt-5.2` | 5 | 11 |
 | `gpt-5.1` | 39 | 27 |
-| `gpt-4.1-nano` | 3 | 3 |
-|` gpt-4.1-mini` | 100 | 5 |
 | `gpt-4.1` | 100 | 5 |
+|` gpt-4.1-mini` | 100 | 5 |
+| `gpt-4.1-nano` | 3 | 3 |
 | `gpt-3.5-turbo` | 63 | 5 |
 
-I'm not sure why the latest GPT models fail so badly at the standard game of FizzBuzz?
+I'm not sure why GPT-5.2 fails so badly at the standard game of FizzBuzz?
 
 ### Claude Models
 
@@ -60,18 +61,28 @@ I'm not sure why the latest GPT models fail so badly at the standard game of Fiz
 | `claude-sonnet-4-20250514` | **100** | **100** |
 | `claude-3-7-sonnet-20250219` | 100 | 5 |
 
-Spoiler: Claude Sonnet 4 (and Opus 4.5) are the best at the standard and modified version of FizzBuzz. 
+### Google Models
+
+| Model | Standard FizzBuzz | Buzz=7|
+|-------|--------------------------|---------------|
+| `gemini-3-pro-preview` | 33 | 59 |
+| `gemini-3-flash-preview` | 100 | 29 |
+| `gemini-2.5-pro` | 100 | 7 |
+| `gemini-2.5-flash` | 5 | 5 |
+| `gemini-2.0-flash` | 100 | 49 |
+| `google/gemma-3-27b-it` | 5 | 5 |
 
 ### Other Models
 
 | Model | Standard FizzBuzz | Buzz=7|
 |-------|--------------------------|---------------|
+| `moonshotai/Kimi-K2-Thinking` | 27 | 23 |
+| `moonshotai/Kimi-K2-Instruct-0905` | 100 | 3 |
+| `zai-org/GLM-4.7` | 13 | 52 |
 | `deepseek-ai/DeepSeek-V3-0324` | 43 | 9 |
 | `deepseek-ai/DeepSeek-V3.1` | 100 | 5 |
-| `google/gemma-3-27b-it` | 5 | 5 |
 | `meta-llama/Llama-3.3-70B-Instruct-Turbo` | 3 | 3 |
 | `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | 5 | 41 |
-| `moonshotai/Kimi-K2-Instruct-0905` | 100 | 3 |
 | `Qwen/Qwen3-235B-A22B-Instruct-2507-tput` | 25 | 11 |
 | `Qwen/Qwen3-Next-80B-A3B-Instruct` | 17 | 5 |
 
@@ -79,9 +90,9 @@ I'll add more models soon.
 
 ## Takeaways
 
-The latest Claude models are the best, **but**:
+GPT-5.2, Claude Sonnet 4.5 and Opus 4.5 are the best, **but**:
 
 - I noticed a lot of sensitivity to the system prompt. During preliminary testing, GPT-5.2 managed to go all the way to 2000(!) on standard FizzBuzz. I slightly modified the prompt since that run and can't replicate it anymore. 
-- I set temperature to 0 and left all other settings as is. Perhaps that disadvantages the models, but I figured that for this benchmark, making the model as deterministic as possible was the best choice.
+- ~~I set temperature to 0 (when possible) and left all other settings as is (thinking tokens/budget was set to around 128 when possible to save on costs). ~~I've left all parameters in their defaults because I realized this was disadvantaging a lot of models (especially with thinking). I don't specify any additional parameters for the model. This also tests the models ability to follow instructions (it should only output the next number after thinking how much ever it wants).
 
-My biggest takeaway is that LLMs (besides Sonnet 4 and Opus 4.5) don't generalize to play the game of FizzBuzz with slightly different rules at all.
+My biggest takeaway is that LLMs don't generalize to play the game of FizzBuzz with slightly different rules at all.
