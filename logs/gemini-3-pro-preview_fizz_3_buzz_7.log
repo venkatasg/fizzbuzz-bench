@@ -3,6 +3,7 @@ Fizzbuzz LLM Benchmark - Google Gemini API
 Game Rules: fizz=3, buzz=7
 ============================================================
 Testing gemini-3-pro-preview
+Turn 1: User said 1
 Turn 2: LLM said '2' (expected '2')
 Turn 3: User said 'fizz'
 Turn 4: LLM said '4' (expected '4')
@@ -61,14 +62,58 @@ Turn 56: LLM said 'buzz' (expected 'buzz')
 Turn 57: User said 'fizz'
 Turn 58: LLM said '58' (expected '58')
 Turn 59: User said '59'
-Turn 60: LLM said 'fizzbuzz' (expected 'fizz')
-FAILED at turn 60!
-Expected: fizz
- Got: fizzbuzz
+Turn 60: LLM said 'fizz' (expected 'fizz')
+Turn 61: User said '61'
+Turn 62: LLM said '62' (expected '62')
+Turn 63: User said 'fizzbuzz'
+Turn 64: LLM said '64' (expected '64')
+Turn 65: User said '65'
+Turn 66: LLM said 'fizz' (expected 'fizz')
+Turn 67: User said '67'
+Turn 68: LLM said '68' (expected '68')
+Turn 69: User said 'fizz'
+Turn 70: LLM said 'buzz' (expected 'buzz')
+Turn 71: User said '71'
+Turn 72: LLM said 'fizz' (expected 'fizz')
+Turn 73: User said '73'
+Turn 74: LLM said '74' (expected '74')
+Turn 75: User said 'fizz'
+Turn 76: LLM said '76' (expected '76')
+Turn 77: User said 'buzz'
+Turn 78: LLM said 'fizz' (expected 'fizz')
+Turn 79: User said '79'
+Turn 80: LLM said '80' (expected '80')
+Turn 81: User said 'fizz'
+Turn 82: LLM said '82' (expected '82')
+Turn 83: User said '83'
+Turn 84: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 85: User said '85'
+Turn 86: LLM said '86' (expected '86')
+Turn 87: User said 'fizz'
+Turn 88: LLM said '88' (expected '88')
+Turn 89: User said '89'
+Turn 90: LLM said 'fizz' (expected 'fizz')
+Turn 91: User said 'buzz'
+Turn 92: LLM said '92' (expected '92')
+Turn 93: User said 'fizz'
+Turn 94: LLM said '94' (expected '94')
+Turn 95: User said '95'
+Turn 96: LLM said 'fizz' (expected 'fizz')
+Turn 97: User said '97'
+Turn 98: LLM said 'buzz' (expected 'buzz')
+Turn 99: User said 'fizz'
+Turn 100: LLM said '100' (expected '100')
+Turn 101: User said '101'
+Turn 102: LLM said 'fizz' (expected 'fizz')
+Turn 103: User said '103'
+Turn 104: LLM said 'buzz' (expected '104')
+FAILED at turn 104!
+Expected: 104
+ Got: buzz
 
 ============================================================
 FINAL RESULTS
 Game Rules: fizz=3, buzz=7
 ============================================================
-gemini-3-pro-preview: 59 correct turns
+gemini-3-pro-preview: 103 correct turns
 ============================================================

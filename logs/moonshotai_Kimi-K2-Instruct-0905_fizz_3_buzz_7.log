@@ -1,18 +1,35 @@
-Fizzbuzz LLM Benchmark
+Fizzbuzz LLM Benchmark - Together AI API
 ============================================================
 Game Rules: fizz=3, buzz=7
 ============================================================
 Testing moonshotai/Kimi-K2-Instruct-0905
+Turn 1: User said 1
 Turn 2: LLM said '2' (expected '2')
 Turn 3: User said 'fizz'
-Turn 4: LLM said 'buzz' (expected '4')
-FAILED at turn 4!
-Expected: 4
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said '5'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said 'buzz'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said '10' (expected '10')
+Turn 11: User said '11'
+Turn 12: LLM said 'fizz' (expected 'fizz')
+Turn 13: User said '13'
+Turn 14: LLM said 'buzz' (expected 'buzz')
+Turn 15: User said 'fizz'
+Turn 16: LLM said '16' (expected '16')
+Turn 17: User said '17'
+Turn 18: LLM said 'fizz' (expected 'fizz')
+Turn 19: User said '19'
+Turn 20: LLM said 'buzz' (expected '20')
+FAILED at turn 20!
+Expected: 20
  Got: buzz
 
 ============================================================
 FINAL RESULTS
 Game Rules: fizz=3, buzz=7
 ============================================================
-moonshotai/Kimi-K2-Instruct-0905: 3 correct turns
+moonshotai/Kimi-K2-Instruct-0905: 19 correct turns
 ============================================================

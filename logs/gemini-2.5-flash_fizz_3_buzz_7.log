@@ -3,6 +3,7 @@ Fizzbuzz LLM Benchmark - Google Gemini API
 Game Rules: fizz=3, buzz=7
 ============================================================
 Testing gemini-2.5-flash
+Turn 1: User said 1
 Turn 2: LLM said '2' (expected '2')
 Turn 3: User said 'fizz'
 Turn 4: LLM said '4' (expected '4')

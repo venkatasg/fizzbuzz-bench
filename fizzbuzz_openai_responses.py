@@ -9,7 +9,7 @@ from openai import OpenAI
 import ipdb
 from utils import log_print, get_fizzbuzz_response
 
-def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz_num: int = 5) -> int:
+def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz_num: int = 5, max_turns: int = 100) -> int:
     """
     Run a Fizzbuzz game with an LLM and return the turn number where it failed.
     Returns 0 if it fails on the first turn, or the turn number of the last correct answer.
@@ -26,6 +26,7 @@ def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz
 
     # Build conversation as array of messages for Responses API
     messages = [{"role": "user", "content": "1"}]
+    log_print(f"Turn 1: User said 1", log_file)
 
     turn = 2  # LLM should respond with turn 2
 
@@ -35,8 +36,6 @@ def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz
                 model=model_name,
                 instructions=instructions,
                 input=messages,
-                # temperature=0,
-                # max_output_tokens=150
             )
             llm_response = response.output_text
 
@@ -64,8 +63,8 @@ def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz
 
             turn += 1
 
-            if turn > 100:
-                return 100
+            if turn > max_turns:
+                return max_turns
 
         except Exception as e:
             log_print(f"ERROR at turn {turn}: {e}", log_file)
@@ -97,6 +96,13 @@ Examples:
         help="Number for 'buzz' (default: 5)"
     )
     parser.add_argument(
+        "--turns",
+        type=int,
+        default=100,
+        dest="max_turns",
+        help="Maximum number of turns to run game for"
+    )
+    parser.add_argument(
         "--model",
         type=str,
         default="gpt-4.1",
@@ -120,11 +126,12 @@ Examples:
     client = OpenAI(api_key=api_key)
 
     score = run_fizzbuzz_game(
-        client,
-        log_file,
-        args.model,
-        args.fizz_num,
-        args.buzz_num
+        client=client,
+        log_file=log_file,
+        model_name=args.model,
+        fizz_num=args.fizz_num,
+        buzz_num=args.buzz_num,
+        max_turns=args.max_turns
     )
 
     log_print(f"\n{'='*60}", log_file)
