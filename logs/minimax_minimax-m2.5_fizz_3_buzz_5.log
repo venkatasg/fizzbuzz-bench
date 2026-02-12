@@ -1,0 +1,27 @@
+Fizzbuzz LLM Benchmark - OpenRouter API
+============================================================
+Model: minimax/minimax-m2.5
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing minimax/minimax-m2.5
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'buzz'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said '7'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said '10' (expected 'buzz')
+FAILED at turn 10!
+Expected: buzz
+ Got: 10
+
+============================================================
+FINAL RESULTS
+Model: minimax/minimax-m2.5
+Game Rules: fizz=3, buzz=5
+============================================================
+minimax/minimax-m2.5: 9 correct turns
+============================================================

@@ -96,3 +96,8 @@ gemini-3-pro-preview: 200 correct turns for fizz:3 and buzz: 5
 gemini-3-pro-preview: 103 correct turns for fizz:3 and buzz: 7
 moonshotai/Kimi-K2-Thinking: 21 correct turns for fizz:3 and buzz: 5
 moonshotai/Kimi-K2-Thinking: 9 correct turns for fizz:3 and buzz: 7
+minimax/minimax-m2.5: 9 correct turns for fizz:3 and buzz: 5
+minimax/minimax-m2.5: 9 correct turns for fizz:3 and buzz: 7
+z-ai/glm-5: 53 correct turns for fizz:3 and buzz: 5
+z-ai/glm-5: 1 correct turns for fizz:3 and buzz: 7
+z-ai/glm-5: 45 correct turns for fizz:3 and buzz: 7
