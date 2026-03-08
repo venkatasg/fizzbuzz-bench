@@ -1,7 +1,7 @@
 def log_print(message, log_file):
     """Print to console and log file simultaneously."""
     print(message)
-    log_file.write(message + '\n')
+    log_file.write(message + "\n")
     log_file.flush()
 
 
