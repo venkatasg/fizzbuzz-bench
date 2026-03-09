@@ -68,7 +68,7 @@ You can view the raw turn-based conversation for every model in the `logs/` fold
 | `gemini-2.5-flash-lite` | 7 | 9 | 11 | 4.8 |
 | `gemini-2.0-flash` | 200 | 39 | 29 | 33.4 |
 | `GLM-5` | 61 | 29 | 9 | 13.2 |
-| `Kimi-K2.5` | 13 | 5 |  |  |
+<!-- | `Kimi-K2.5` | 13 | 5 |  |  | -->
 
 
 ## FAQs
