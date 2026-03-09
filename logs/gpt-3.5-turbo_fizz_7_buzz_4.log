@@ -1,0 +1,25 @@
+Fizzbuzz LLM Benchmark - OpenAI Responses API
+============================================================
+Game Rules: fizz=7, buzz=4
+============================================================
+Testing gpt-3.5-turbo
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said '3'
+Turn 4: LLM said 'buzz' (expected 'buzz')
+Turn 5: User said '5'
+Turn 6: LLM said '6' (expected '6')
+Turn 7: User said 'fizz'
+Turn 8: LLM said 'buzz' (expected 'buzz')
+Turn 9: User said '9'
+Turn 10: LLM said 'buzz' (expected '10')
+FAILED at turn 10!
+Expected: 10
+ Got: buzz
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=7, buzz=4
+============================================================
+gpt-3.5-turbo: 9 correct turns
+============================================================

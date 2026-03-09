@@ -1,0 +1,8 @@
+Fizzbuzz LLM Benchmark - Together AI API
+============================================================
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing Qwen/Qwen3.5-397B-A17B
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'

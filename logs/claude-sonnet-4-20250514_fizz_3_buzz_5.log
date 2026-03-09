@@ -204,10 +204,310 @@ Turn 198: LLM said 'fizz' (expected 'fizz')
 Turn 199: User said '199'
 Turn 200: LLM said 'buzz' (expected 'buzz')
 Turn 201: User said 'fizz'
+Turn 202: LLM said '202' (expected '202')
+Turn 203: User said '203'
+Turn 204: LLM said 'fizz' (expected 'fizz')
+Turn 205: User said 'buzz'
+Turn 206: LLM said '206' (expected '206')
+Turn 207: User said 'fizz'
+Turn 208: LLM said '208' (expected '208')
+Turn 209: User said '209'
+Turn 210: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 211: User said '211'
+Turn 212: LLM said '212' (expected '212')
+Turn 213: User said 'fizz'
+Turn 214: LLM said '214' (expected '214')
+Turn 215: User said 'buzz'
+Turn 216: LLM said 'fizz' (expected 'fizz')
+Turn 217: User said '217'
+Turn 218: LLM said '218' (expected '218')
+Turn 219: User said 'fizz'
+Turn 220: LLM said 'buzz' (expected 'buzz')
+Turn 221: User said '221'
+Turn 222: LLM said 'fizz' (expected 'fizz')
+Turn 223: User said '223'
+Turn 224: LLM said '224' (expected '224')
+Turn 225: User said 'fizzbuzz'
+Turn 226: LLM said '226' (expected '226')
+Turn 227: User said '227'
+Turn 228: LLM said 'fizz' (expected 'fizz')
+Turn 229: User said '229'
+Turn 230: LLM said 'buzz' (expected 'buzz')
+Turn 231: User said 'fizz'
+Turn 232: LLM said '232' (expected '232')
+Turn 233: User said '233'
+Turn 234: LLM said 'fizz' (expected 'fizz')
+Turn 235: User said 'buzz'
+Turn 236: LLM said '236' (expected '236')
+Turn 237: User said 'fizz'
+Turn 238: LLM said '238' (expected '238')
+Turn 239: User said '239'
+Turn 240: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 241: User said '241'
+Turn 242: LLM said '242' (expected '242')
+Turn 243: User said 'fizz'
+Turn 244: LLM said '244' (expected '244')
+Turn 245: User said 'buzz'
+Turn 246: LLM said 'fizz' (expected 'fizz')
+Turn 247: User said '247'
+Turn 248: LLM said '248' (expected '248')
+Turn 249: User said 'fizz'
+Turn 250: LLM said 'buzz' (expected 'buzz')
+Turn 251: User said '251'
+Turn 252: LLM said 'fizz' (expected 'fizz')
+Turn 253: User said '253'
+Turn 254: LLM said '254' (expected '254')
+Turn 255: User said 'fizzbuzz'
+Turn 256: LLM said '256' (expected '256')
+Turn 257: User said '257'
+Turn 258: LLM said 'fizz' (expected 'fizz')
+Turn 259: User said '259'
+Turn 260: LLM said 'buzz' (expected 'buzz')
+Turn 261: User said 'fizz'
+Turn 262: LLM said '262' (expected '262')
+Turn 263: User said '263'
+Turn 264: LLM said 'fizz' (expected 'fizz')
+Turn 265: User said 'buzz'
+Turn 266: LLM said '266' (expected '266')
+Turn 267: User said 'fizz'
+Turn 268: LLM said '268' (expected '268')
+Turn 269: User said '269'
+Turn 270: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 271: User said '271'
+Turn 272: LLM said '272' (expected '272')
+Turn 273: User said 'fizz'
+Turn 274: LLM said '274' (expected '274')
+Turn 275: User said 'buzz'
+Turn 276: LLM said 'fizz' (expected 'fizz')
+Turn 277: User said '277'
+Turn 278: LLM said '278' (expected '278')
+Turn 279: User said 'fizz'
+Turn 280: LLM said 'buzz' (expected 'buzz')
+Turn 281: User said '281'
+Turn 282: LLM said 'fizz' (expected 'fizz')
+Turn 283: User said '283'
+Turn 284: LLM said '284' (expected '284')
+Turn 285: User said 'fizzbuzz'
+Turn 286: LLM said '286' (expected '286')
+Turn 287: User said '287'
+Turn 288: LLM said 'fizz' (expected 'fizz')
+Turn 289: User said '289'
+Turn 290: LLM said 'buzz' (expected 'buzz')
+Turn 291: User said 'fizz'
+Turn 292: LLM said '292' (expected '292')
+Turn 293: User said '293'
+Turn 294: LLM said 'fizz' (expected 'fizz')
+Turn 295: User said 'buzz'
+Turn 296: LLM said '296' (expected '296')
+Turn 297: User said 'fizz'
+Turn 298: LLM said '298' (expected '298')
+Turn 299: User said '299'
+Turn 300: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 301: User said '301'
+Turn 302: LLM said '302' (expected '302')
+Turn 303: User said 'fizz'
+Turn 304: LLM said '304' (expected '304')
+Turn 305: User said 'buzz'
+Turn 306: LLM said 'fizz' (expected 'fizz')
+Turn 307: User said '307'
+Turn 308: LLM said '308' (expected '308')
+Turn 309: User said 'fizz'
+Turn 310: LLM said 'buzz' (expected 'buzz')
+Turn 311: User said '311'
+Turn 312: LLM said 'fizz' (expected 'fizz')
+Turn 313: User said '313'
+Turn 314: LLM said '314' (expected '314')
+Turn 315: User said 'fizzbuzz'
+Turn 316: LLM said '316' (expected '316')
+Turn 317: User said '317'
+Turn 318: LLM said 'fizz' (expected 'fizz')
+Turn 319: User said '319'
+Turn 320: LLM said 'buzz' (expected 'buzz')
+Turn 321: User said 'fizz'
+Turn 322: LLM said '322' (expected '322')
+Turn 323: User said '323'
+Turn 324: LLM said 'fizz' (expected 'fizz')
+Turn 325: User said 'buzz'
+Turn 326: LLM said '326' (expected '326')
+Turn 327: User said 'fizz'
+Turn 328: LLM said '328' (expected '328')
+Turn 329: User said '329'
+Turn 330: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 331: User said '331'
+Turn 332: LLM said '332' (expected '332')
+Turn 333: User said 'fizz'
+Turn 334: LLM said '334' (expected '334')
+Turn 335: User said 'buzz'
+Turn 336: LLM said 'fizz' (expected 'fizz')
+Turn 337: User said '337'
+Turn 338: LLM said '338' (expected '338')
+Turn 339: User said 'fizz'
+Turn 340: LLM said 'buzz' (expected 'buzz')
+Turn 341: User said '341'
+Turn 342: LLM said 'fizz' (expected 'fizz')
+Turn 343: User said '343'
+Turn 344: LLM said '344' (expected '344')
+Turn 345: User said 'fizzbuzz'
+Turn 346: LLM said '346' (expected '346')
+Turn 347: User said '347'
+Turn 348: LLM said 'fizz' (expected 'fizz')
+Turn 349: User said '349'
+Turn 350: LLM said 'buzz' (expected 'buzz')
+Turn 351: User said 'fizz'
+Turn 352: LLM said '352' (expected '352')
+Turn 353: User said '353'
+Turn 354: LLM said 'fizz' (expected 'fizz')
+Turn 355: User said 'buzz'
+Turn 356: LLM said '356' (expected '356')
+Turn 357: User said 'fizz'
+Turn 358: LLM said '358' (expected '358')
+Turn 359: User said '359'
+Turn 360: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 361: User said '361'
+Turn 362: LLM said '362' (expected '362')
+Turn 363: User said 'fizz'
+Turn 364: LLM said '364' (expected '364')
+Turn 365: User said 'buzz'
+Turn 366: LLM said 'fizz' (expected 'fizz')
+Turn 367: User said '367'
+Turn 368: LLM said '368' (expected '368')
+Turn 369: User said 'fizz'
+Turn 370: LLM said 'buzz' (expected 'buzz')
+Turn 371: User said '371'
+Turn 372: LLM said 'fizz' (expected 'fizz')
+Turn 373: User said '373'
+Turn 374: LLM said '374' (expected '374')
+Turn 375: User said 'fizzbuzz'
+Turn 376: LLM said '376' (expected '376')
+Turn 377: User said '377'
+Turn 378: LLM said 'fizz' (expected 'fizz')
+Turn 379: User said '379'
+Turn 380: LLM said 'buzz' (expected 'buzz')
+Turn 381: User said 'fizz'
+Turn 382: LLM said '382' (expected '382')
+Turn 383: User said '383'
+Turn 384: LLM said 'fizz' (expected 'fizz')
+Turn 385: User said 'buzz'
+Turn 386: LLM said '386' (expected '386')
+Turn 387: User said 'fizz'
+Turn 388: LLM said '388' (expected '388')
+Turn 389: User said '389'
+Turn 390: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 391: User said '391'
+Turn 392: LLM said '392' (expected '392')
+Turn 393: User said 'fizz'
+Turn 394: LLM said '394' (expected '394')
+Turn 395: User said 'buzz'
+Turn 396: LLM said 'fizz' (expected 'fizz')
+Turn 397: User said '397'
+Turn 398: LLM said '398' (expected '398')
+Turn 399: User said 'fizz'
+Turn 400: LLM said 'buzz' (expected 'buzz')
+Turn 401: User said '401'
+Turn 402: LLM said 'fizz' (expected 'fizz')
+Turn 403: User said '403'
+Turn 404: LLM said '404' (expected '404')
+Turn 405: User said 'fizzbuzz'
+Turn 406: LLM said '406' (expected '406')
+Turn 407: User said '407'
+Turn 408: LLM said 'fizz' (expected 'fizz')
+Turn 409: User said '409'
+Turn 410: LLM said 'buzz' (expected 'buzz')
+Turn 411: User said 'fizz'
+Turn 412: LLM said '412' (expected '412')
+Turn 413: User said '413'
+Turn 414: LLM said 'fizz' (expected 'fizz')
+Turn 415: User said 'buzz'
+Turn 416: LLM said '416' (expected '416')
+Turn 417: User said 'fizz'
+Turn 418: LLM said '418' (expected '418')
+Turn 419: User said '419'
+Turn 420: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 421: User said '421'
+Turn 422: LLM said '422' (expected '422')
+Turn 423: User said 'fizz'
+Turn 424: LLM said '424' (expected '424')
+Turn 425: User said 'buzz'
+Turn 426: LLM said 'fizz' (expected 'fizz')
+Turn 427: User said '427'
+Turn 428: LLM said '428' (expected '428')
+Turn 429: User said 'fizz'
+Turn 430: LLM said 'buzz' (expected 'buzz')
+Turn 431: User said '431'
+Turn 432: LLM said 'fizz' (expected 'fizz')
+Turn 433: User said '433'
+Turn 434: LLM said '434' (expected '434')
+Turn 435: User said 'fizzbuzz'
+Turn 436: LLM said '436' (expected '436')
+Turn 437: User said '437'
+Turn 438: LLM said 'fizz' (expected 'fizz')
+Turn 439: User said '439'
+Turn 440: LLM said 'buzz' (expected 'buzz')
+Turn 441: User said 'fizz'
+Turn 442: LLM said '442' (expected '442')
+Turn 443: User said '443'
+Turn 444: LLM said 'fizz' (expected 'fizz')
+Turn 445: User said 'buzz'
+Turn 446: LLM said '446' (expected '446')
+Turn 447: User said 'fizz'
+Turn 448: LLM said '448' (expected '448')
+Turn 449: User said '449'
+Turn 450: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 451: User said '451'
+Turn 452: LLM said '452' (expected '452')
+Turn 453: User said 'fizz'
+Turn 454: LLM said '454' (expected '454')
+Turn 455: User said 'buzz'
+Turn 456: LLM said 'fizz' (expected 'fizz')
+Turn 457: User said '457'
+Turn 458: LLM said '458' (expected '458')
+Turn 459: User said 'fizz'
+Turn 460: LLM said 'buzz' (expected 'buzz')
+Turn 461: User said '461'
+Turn 462: LLM said 'fizz' (expected 'fizz')
+Turn 463: User said '463'
+Turn 464: LLM said '464' (expected '464')
+Turn 465: User said 'fizzbuzz'
+Turn 466: LLM said '466' (expected '466')
+Turn 467: User said '467'
+Turn 468: LLM said 'fizz' (expected 'fizz')
+Turn 469: User said '469'
+Turn 470: LLM said 'buzz' (expected 'buzz')
+Turn 471: User said 'fizz'
+Turn 472: LLM said '472' (expected '472')
+Turn 473: User said '473'
+Turn 474: LLM said 'fizz' (expected 'fizz')
+Turn 475: User said 'buzz'
+Turn 476: LLM said '476' (expected '476')
+Turn 477: User said 'fizz'
+Turn 478: LLM said '478' (expected '478')
+Turn 479: User said '479'
+Turn 480: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 481: User said '481'
+Turn 482: LLM said '482' (expected '482')
+Turn 483: User said 'fizz'
+Turn 484: LLM said '484' (expected '484')
+Turn 485: User said 'buzz'
+Turn 486: LLM said 'fizz' (expected 'fizz')
+Turn 487: User said '487'
+Turn 488: LLM said '488' (expected '488')
+Turn 489: User said 'fizz'
+Turn 490: LLM said 'buzz' (expected 'buzz')
+Turn 491: User said '491'
+Turn 492: LLM said 'fizz' (expected 'fizz')
+Turn 493: User said '493'
+Turn 494: LLM said '494' (expected '494')
+Turn 495: User said 'fizzbuzz'
+Turn 496: LLM said '496' (expected '496')
+Turn 497: User said '497'
+Turn 498: LLM said 'fizz' (expected 'fizz')
+Turn 499: User said '499'
+Turn 500: LLM said 'buzz' (expected 'buzz')
+Turn 501: User said 'fizz'
 
 ============================================================
 FINAL RESULTS
 Game Rules: fizz=3, buzz=5
 ============================================================
-claude-sonnet-4-20250514: 200 correct turns
+claude-sonnet-4-20250514: 500 correct turns
 ============================================================

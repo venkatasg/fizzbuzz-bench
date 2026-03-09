@@ -1,0 +1,8 @@
+Fizzbuzz LLM Benchmark - Together AI API
+============================================================
+Game Rules: fizz=3, buzz=7
+============================================================
+Testing moonshotai/Kimi-K2.5
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'

@@ -1,0 +1,17 @@
+Fizzbuzz LLM Benchmark - Together AI API
+============================================================
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing MiniMaxAI/MiniMax-M2.5
+Turn 1: User said 1
+Turn 2: LLM said '1' (expected '2')
+FAILED at turn 2!
+Expected: 2
+ Got: 1
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=5
+============================================================
+MiniMaxAI/MiniMax-M2.5: 1 correct turns
+============================================================

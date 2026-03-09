@@ -1,0 +1,14 @@
+Fizzbuzz LLM Benchmark - OpenAI Responses API
+============================================================
+Game Rules: fizz=7, buzz=4
+============================================================
+Testing gpt-5-nano
+Turn 1: User said 1
+ERROR at turn 2: Error code: 400 - {'error': {'message': "Invalid schema for response_format 'fizzbuzz_response': In context=('properties', 'result'), 'oneOf' is not permitted.", 'type': 'invalid_request_error', 'param': 'text.format.schema', 'code': 'invalid_json_schema'}}
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=7, buzz=4
+============================================================
+gpt-5-nano: 1 correct turns
+============================================================

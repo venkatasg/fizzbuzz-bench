@@ -1,0 +1,14 @@
+Fizzbuzz LLM Benchmark - Anthropic Messages API
+============================================================
+Game Rules: fizz=7, buzz=4
+============================================================
+Testing claude-sonnet-3-7
+Turn 1: User said 1
+ERROR at turn 2: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-3-7'}, 'request_id': 'req_011CYZGXvQF6Yo5Lr2yT526m'}
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=7, buzz=4
+============================================================
+claude-sonnet-3-7: 1 correct turns
+============================================================

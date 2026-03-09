@@ -1,0 +1,23 @@
+Fizzbuzz LLM Benchmark - Google Gemini API
+============================================================
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing gemini-2.5-flash-lite
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'buzz'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said '7'
+Turn 8: LLM said '11' (expected '8')
+FAILED at turn 8!
+Expected: 8
+ Got: 11
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=5
+============================================================
+gemini-2.5-flash-lite: 7 correct turns
+============================================================

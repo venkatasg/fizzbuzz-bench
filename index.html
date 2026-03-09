@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FizzBuzz Bench</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0F1117;
+    color: #e0e0e0;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    padding: 40px 48px;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    color: #9ca3af;
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 720px;
+    margin-bottom: 32px;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .legend-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .legend-group-label {
+    font-size: 11px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 2px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #9ca3af;
+    position: relative;
+  }
+  .legend-item[data-tip]:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #23262f;
+    color: #d1d5db;
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    pointer-events: none;
+    border: 1px solid #2a2d35;
+    z-index: 10;
+  }
+  .legend-item[data-tip]:hover::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 3px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #23262f;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* Table */
+  .chart-header {
+    display: grid;
+    grid-template-columns: 210px 140px 140px 140px 1fr;
+    padding: 0 12px 8px 12px;
+    border-bottom: 1px solid #2a2d35;
+    margin-bottom: 4px;
+  }
+  .chart-header span {
+    font-size: 11px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .chart-header span:last-child {
+    text-align: left;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 210px 140px 140px 140px 1fr;
+    align-items: center;
+    padding: 7px 12px;
+    border-bottom: 1px solid #1a1d25;
+    transition: background 0.15s;
+  }
+  .row:hover {
+    background: #1a1f2e;
+  }
+
+  .model-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #e5e7eb;
+    white-space: nowrap;
+  }
+  .provider-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Bars */
+  .bar-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bar-track {
+    width: 80px;
+    height: 14px;
+    background: #1a1d25;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    width: 0;
+    transition: width 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .bar-value {
+    font-size: 11px;
+    color: #9ca3af;
+    min-width: 26px;
+    text-align: right;
+  }
+
+  .score-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .score-track {
+    flex: 1;
+    max-width: 240px;
+    height: 18px;
+    background: #1a1d25;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .score-fill {
+    height: 100%;
+    border-radius: 4px;
+    width: 0;
+    transition: width 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .score-value {
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 42px;
+    text-align: right;
+  }
+
+  /* Colors */
+  .bar-easy { background: #22c55e; }
+  .bar-medium { background: #f59e0b; }
+  .bar-hard { background: #ef6456; }
+
+  .provider-openai { background: #f1f8ff; }
+  .provider-anthropic { background: #f97316; }
+  .provider-google { background: #60a5fa; }
+  .provider-other { background: #1f641b; }
+
+  .score-openai { color: #f1f8ff; }
+  .score-anthropic { color: #f97316; }
+  .score-google { color: #60a5fa; }
+  .score-other { color: #1f641b; }
+
+  .instructions {
+    background: #1a1d25;
+    border-left: 3px solid #2a2d35;
+    margin-bottom: 32px;
+    max-width: 680px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #9ca3af;
+    border-radius: 0 4px 4px 0;
+    overflow: hidden;
+  }
+  .instructions-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 18px;
+    cursor: pointer;
+    user-select: none;
+    color: #9ca3af;
+    font-size: 12px;
+    font-family: inherit;
+    transition: color 0.15s;
+  }
+  .instructions-toggle:hover {
+    color: #d1d5db;
+  }
+  .instructions-toggle .chevron {
+    display: inline-block;
+    transition: transform 0.25s;
+    font-size: 10px;
+  }
+  .instructions.open .chevron {
+    transform: rotate(90deg);
+  }
+  .instructions-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 18px;
+  }
+  .instructions.open .instructions-body {
+    max-height: 300px;
+    padding: 0 18px 14px 18px;
+  }
+
+  .footer {
+    margin-top: 28px;
+    font-size: 11px;
+    color: #4b5563;
+  }
+</style>
+</head>
+<body>
+
+<h1>FizzBuzz Bench</h1>
+<p class="subtitle">A (silly) benchmark for testing how well LLMs can play the children's game <a href="https://en.wikipedia.org/wiki/Fizz_buzz" style="color:#60a5fa;text-decoration:none;">FizzBuzz</a>.</p>
+<p class="subtitle">By customizing the numbers when 'Fizz' or 'Buzz' should be said, we can test whether LLMs generalize to play the game by the new rules, or just memorize what they've seen about Fizz buzz from training. The benchmark has 3 difficulty levels:</p> 
+<ul class="subtitle">
+    <li><em>Easy</em>: standard Fizz buzz.</li>
+    <li><em>Medium</em>: Say Buzz at multiples of 7.</li>
+    <li><em>Hard</em>: Say Fizz at multiples 7, and Buzz at multiples of 4.</li>
+</ul>
+
+<p class="subtitle"> I tested each model for 200 turns of FizzBuzz; <b>A model's score is the turn count until it says something wrong in its turn</b>. I then derived a composite score out of 100 across all 3 levels: 0.5 * (0.2 * easy + 0.35 * medium + 0.45 * hard)</p>
+
+<div class="instructions" id="instructions">
+<div class="instructions-toggle" onclick="document.getElementById('instructions').classList.toggle('open'); var t=this; var s=t.querySelector('.label'); s.textContent=t.parentElement.classList.contains('open')?'Hide system instructions':'See system instructions for task'">
+  <span class="chevron">&#9654;</span>
+  <span class="label">See system instructions for task</span>
+</div>
+<div class="instructions-body">
+You are playing FizzBuzz with the following rules:<br>
+&bull; If a number is divisible by <span style="color:#e5e7eb">{fizz_num}</span>, say 'fizz'<br>
+&bull; If a number is divisible by <span style="color:#e5e7eb">{buzz_num}</span>, say 'buzz'<br>
+&bull; If a number is divisible by both <span style="color:#e5e7eb">{fizz_num}</span> and <span style="color:#e5e7eb">{buzz_num}</span>, say 'fizzbuzz'<br>
+&bull; Otherwise, say the number itself<br><br>
+I will give you a number, and you must respond with the NEXT number (or word) in the sequence following these rules. Respond with ONLY the answer &mdash; just the number, 'fizz', 'buzz', or 'fizzbuzz'. No explanations, no additional text, no punctuation.
+</div>
+</div>
+
+<div class="legend">
+  <div class="legend-group">
+    <span class="legend-group-label">Difficulty</span>
+    <div class="legend-item" data-tip="Standard Fizz buzz"><div class="legend-swatch" style="background:#22c55e"></div>Easy</div>
+    <div class="legend-item" data-tip="Fizz buzz with buzz=7"><div class="legend-swatch" style="background:#f59e0b"></div>Medium</div>
+    <div class="legend-item" data-tip="Fizz buzz with fizz=7 and buzz=4"><div class="legend-swatch" style="background:#ef6456"></div>Hard</div>
+  </div>
+  <div class="legend-group">
+    <span class="legend-group-label">Provider</span>
+    <div class="legend-item"><div class="legend-dot" style="background:#f1f8ff"></div>OpenAI</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div>Anthropic</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div>Google</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1f641b"></div>Open weights</div>
+  </div>
+</div>
+
+<div class="chart-header">
+  <span>Model</span>
+  <span>Easy</span>
+  <span>Medium</span>
+  <span>Hard</span>
+  <span>Overall Score</span>
+</div>
+
+<div id="chart"></div>
+
+<p class="footer">Raw scores out of 200 per difficulty tier &middot; Overall score is a weighted composite (0&ndash;100)</p>
+
+<script>
+const data = [
+  { name: "GPT 5.2-pro",            easy: 200, med: 200, hard: 200, score: 100.0 },
+  { name: "Gemini 3.1-pro-preview", easy: 200, med: 200, hard: 200, score: 100.0 },
+  { name: "Claude opus-4-6",        easy: 200, med: 181, hard: 200, score: 96.7 },
+  { name: "Claude opus-4-5",        easy: 200, med: 200, hard: 181, score: 95.7 },
+  { name: "Claude opus-4",          easy: 200, med: 200, hard: 181, score: 95.7 },
+  { name: "Claude sonnet-4-5",      easy: 200, med: 200, hard: 141, score: 86.7 },
+  { name: "Claude sonnet-4",        easy: 200, med: 200, hard: 141, score: 86.7 },
+  { name: "Gemini 2.5-pro",         easy: 200, med: 200, hard: 113, score: 80.4 },
+  { name: "Claude opus-4.1",        easy: 200, med: 57,  hard: 200, score: 75.0 },
+  { name: "GPT 5.1",                easy: 117, med: 129, hard: 147, score: 67.3 },
+  { name: "GPT 5.2",                easy: 92,  med: 133, hard: 119, score: 59.2 },
+  { name: "GPT 5",                  easy: 200, med: 73,  hard: 77,  score: 50.1 },
+  { name: "Gemini 3-flash-preview", easy: 115, med: 83,  hard: 69,  score: 41.5 },
+  { name: "Gemini 2.0-flash",       easy: 200, med: 39,  hard: 29,  score: 33.4 },
+  { name: "Gemini 3.1-flash-lite",  easy: 200, med: 33,  hard: 11,  score: 28.2 },
+  { name: "GPT 5-mini",             easy: 71,  med: 69,  hard: 35,  score: 27.1 },
+  { name: "Claude sonnet-4-6",      easy: 200, med: 5,   hard: 27,  score: 26.9 },
+  { name: "GPT 4.1",                easy: 200, med: 5,   hard: 7,   score: 22.4 },
+  { name: "GPT 4.1-mini",           easy: 200, med: 5,   hard: 7,   score: 22.4 },
+  { name: "GLM-5",                  easy: 61,  med: 29,  hard: 9,   score: 13.2 },
+  { name: "GPT 5-nano",             easy: 8,   med: 35,  hard: 21,  score: 11.7 },
+  { name: "GPT 3.5-turbo",          easy: 57,  med: 1,   hard: 9,   score: 7.9 },
+  { name: "Gemini 2.5-flash-lite",  easy: 7,   med: 9,   hard: 11,  score: 4.8 },
+  { name: "Claude haiku-4-5",       easy: 5,   med: 13,  hard: 5,   score: 3.9 },
+  { name: "Gemini 2.5-flash",       easy: 3,   med: 7,   hard: 3,   score: 2.2 },
+  { name: "GPT 4.1-nano",           easy: 3,   med: 5,   hard: 3,   score: 1.9 },
+];
+
+function provider(name) {
+  if (name.startsWith("GPT")) return "openai";
+  if (name.startsWith("Claude")) return "anthropic";
+  if (name.startsWith("Gemini")) return "google";
+  return "other";
+}
+
+const chart = document.getElementById("chart");
+
+data.forEach((d, i) => {
+  const p = provider(d.name);
+  const row = document.createElement("div");
+  row.className = "row";
+
+  const delayBase = i * 60;
+
+  row.innerHTML = `
+    <div class="model-name">
+      <div class="provider-dot provider-${p}"></div>
+      ${d.name}
+    </div>
+    <div class="bar-cell">
+      <div class="bar-track"><div class="bar-fill bar-easy" data-pct="${d.easy / 200 * 100}" style="transition-delay:${delayBase}ms"></div></div>
+      <span class="bar-value">${d.easy}</span>
+    </div>
+    <div class="bar-cell">
+      <div class="bar-track"><div class="bar-fill bar-medium" data-pct="${d.med / 200 * 100}" style="transition-delay:${delayBase + 40}ms"></div></div>
+      <span class="bar-value">${d.med}</span>
+    </div>
+    <div class="bar-cell">
+      <div class="bar-track"><div class="bar-fill bar-hard" data-pct="${d.hard / 200 * 100}" style="transition-delay:${delayBase + 80}ms"></div></div>
+      <span class="bar-value">${d.hard}</span>
+    </div>
+    <div class="score-cell">
+      <div class="score-track"><div class="score-fill provider-${p}" data-pct="${d.score}" style="transition-delay:${delayBase + 150}ms"></div></div>
+      <span class="score-value score-${p}">${d.score.toFixed(1)}</span>
+    </div>
+  `;
+
+  chart.appendChild(row);
+});
+
+// Trigger animation after paint
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.querySelectorAll(".bar-fill").forEach(el => {
+      el.style.width = el.dataset.pct + "%";
+    });
+    document.querySelectorAll(".score-fill").forEach(el => {
+      el.style.width = el.dataset.pct + "%";
+    });
+  });
+});
+</script>
+</body>
+</html>

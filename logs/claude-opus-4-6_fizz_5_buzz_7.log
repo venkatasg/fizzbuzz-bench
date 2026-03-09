@@ -1,0 +1,197 @@
+Fizzbuzz LLM Benchmark - Anthropic Messages API
+============================================================
+Game Rules: fizz=5, buzz=7
+============================================================
+Testing claude-opus-4-6
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said '3'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'fizz'
+Turn 6: LLM said '6' (expected '6')
+Turn 7: User said 'buzz'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said '9'
+Turn 10: LLM said 'fizz' (expected 'fizz')
+Turn 11: User said '11'
+Turn 12: LLM said '12' (expected '12')
+Turn 13: User said '13'
+Turn 14: LLM said 'buzz' (expected 'buzz')
+Turn 15: User said 'fizz'
+Turn 16: LLM said '16' (expected '16')
+Turn 17: User said '17'
+Turn 18: LLM said '18' (expected '18')
+Turn 19: User said '19'
+Turn 20: LLM said 'fizz' (expected 'fizz')
+Turn 21: User said 'buzz'
+Turn 22: LLM said '22' (expected '22')
+Turn 23: User said '23'
+Turn 24: LLM said '24' (expected '24')
+Turn 25: User said 'fizz'
+Turn 26: LLM said '26' (expected '26')
+Turn 27: User said '27'
+Turn 28: LLM said 'buzz' (expected 'buzz')
+Turn 29: User said '29'
+Turn 30: LLM said 'fizz' (expected 'fizz')
+Turn 31: User said '31'
+Turn 32: LLM said '32' (expected '32')
+Turn 33: User said '33'
+Turn 34: LLM said '34' (expected '34')
+Turn 35: User said 'fizzbuzz'
+Turn 36: LLM said '36' (expected '36')
+Turn 37: User said '37'
+Turn 38: LLM said '38' (expected '38')
+Turn 39: User said '39'
+Turn 40: LLM said 'fizz' (expected 'fizz')
+Turn 41: User said '41'
+Turn 42: LLM said 'buzz' (expected 'buzz')
+Turn 43: User said '43'
+Turn 44: LLM said '44' (expected '44')
+Turn 45: User said 'fizz'
+Turn 46: LLM said '46' (expected '46')
+Turn 47: User said '47'
+Turn 48: LLM said '48' (expected '48')
+Turn 49: User said 'buzz'
+Turn 50: LLM said 'fizz' (expected 'fizz')
+Turn 51: User said '51'
+Turn 52: LLM said '52' (expected '52')
+Turn 53: User said '53'
+Turn 54: LLM said '54' (expected '54')
+Turn 55: User said 'fizz'
+Turn 56: LLM said 'buzz' (expected 'buzz')
+Turn 57: User said '57'
+Turn 58: LLM said '58' (expected '58')
+Turn 59: User said '59'
+Turn 60: LLM said 'fizz' (expected 'fizz')
+Turn 61: User said '61'
+Turn 62: LLM said '62' (expected '62')
+Turn 63: User said 'buzz'
+Turn 64: LLM said '64' (expected '64')
+Turn 65: User said 'fizz'
+Turn 66: LLM said '66' (expected '66')
+Turn 67: User said '67'
+Turn 68: LLM said '68' (expected '68')
+Turn 69: User said '69'
+Turn 70: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 71: User said '71'
+Turn 72: LLM said '72' (expected '72')
+Turn 73: User said '73'
+Turn 74: LLM said '74' (expected '74')
+Turn 75: User said 'fizz'
+Turn 76: LLM said '76' (expected '76')
+Turn 77: User said 'buzz'
+Turn 78: LLM said '78' (expected '78')
+Turn 79: User said '79'
+Turn 80: LLM said 'fizz' (expected 'fizz')
+Turn 81: User said '81'
+Turn 82: LLM said '82' (expected '82')
+Turn 83: User said '83'
+Turn 84: LLM said 'buzz' (expected 'buzz')
+Turn 85: User said 'fizz'
+Turn 86: LLM said '86' (expected '86')
+Turn 87: User said '87'
+Turn 88: LLM said '88' (expected '88')
+Turn 89: User said '89'
+Turn 90: LLM said 'fizz' (expected 'fizz')
+Turn 91: User said 'buzz'
+Turn 92: LLM said '92' (expected '92')
+Turn 93: User said '93'
+Turn 94: LLM said '94' (expected '94')
+Turn 95: User said 'fizz'
+Turn 96: LLM said '96' (expected '96')
+Turn 97: User said '97'
+Turn 98: LLM said 'buzz' (expected 'buzz')
+Turn 99: User said '99'
+Turn 100: LLM said 'fizz' (expected 'fizz')
+Turn 101: User said '101'
+Turn 102: LLM said '102' (expected '102')
+Turn 103: User said '103'
+Turn 104: LLM said '104' (expected '104')
+Turn 105: User said 'fizzbuzz'
+Turn 106: LLM said '106' (expected '106')
+Turn 107: User said '107'
+Turn 108: LLM said '108' (expected '108')
+Turn 109: User said '109'
+Turn 110: LLM said 'fizz' (expected 'fizz')
+Turn 111: User said '111'
+Turn 112: LLM said 'buzz' (expected 'buzz')
+Turn 113: User said '113'
+Turn 114: LLM said '114' (expected '114')
+Turn 115: User said 'fizz'
+Turn 116: LLM said '116' (expected '116')
+Turn 117: User said '117'
+Turn 118: LLM said '118' (expected '118')
+Turn 119: User said 'buzz'
+Turn 120: LLM said 'fizz' (expected 'fizz')
+Turn 121: User said '121'
+Turn 122: LLM said '122' (expected '122')
+Turn 123: User said '123'
+Turn 124: LLM said '124' (expected '124')
+Turn 125: User said 'fizz'
+Turn 126: LLM said 'buzz' (expected 'buzz')
+Turn 127: User said '127'
+Turn 128: LLM said '128' (expected '128')
+Turn 129: User said '129'
+Turn 130: LLM said 'fizz' (expected 'fizz')
+Turn 131: User said '131'
+Turn 132: LLM said '132' (expected '132')
+Turn 133: User said 'buzz'
+Turn 134: LLM said '134' (expected '134')
+Turn 135: User said 'fizz'
+Turn 136: LLM said '136' (expected '136')
+Turn 137: User said '137'
+Turn 138: LLM said '138' (expected '138')
+Turn 139: User said '139'
+Turn 140: LLM said 'fizzbuzz' (expected 'fizzbuzz')
+Turn 141: User said '141'
+Turn 142: LLM said '142' (expected '142')
+Turn 143: User said '143'
+Turn 144: LLM said '144' (expected '144')
+Turn 145: User said 'fizz'
+Turn 146: LLM said '146' (expected '146')
+Turn 147: User said 'buzz'
+Turn 148: LLM said '148' (expected '148')
+Turn 149: User said '149'
+Turn 150: LLM said 'fizz' (expected 'fizz')
+Turn 151: User said '151'
+Turn 152: LLM said '152' (expected '152')
+Turn 153: User said '153'
+Turn 154: LLM said 'buzz' (expected 'buzz')
+Turn 155: User said 'fizz'
+Turn 156: LLM said '156' (expected '156')
+Turn 157: User said '157'
+Turn 158: LLM said '158' (expected '158')
+Turn 159: User said '159'
+Turn 160: LLM said 'fizz' (expected 'fizz')
+Turn 161: User said 'buzz'
+Turn 162: LLM said '162' (expected '162')
+Turn 163: User said '163'
+Turn 164: LLM said '164' (expected '164')
+Turn 165: User said 'fizz'
+Turn 166: LLM said '166' (expected '166')
+Turn 167: User said '167'
+Turn 168: LLM said 'buzz' (expected 'buzz')
+Turn 169: User said '169'
+Turn 170: LLM said 'fizz' (expected 'fizz')
+Turn 171: User said '171'
+Turn 172: LLM said '172' (expected '172')
+Turn 173: User said '173'
+Turn 174: LLM said '174' (expected '174')
+Turn 175: User said 'fizzbuzz'
+Turn 176: LLM said '176' (expected '176')
+Turn 177: User said '177'
+Turn 178: LLM said '178' (expected '178')
+Turn 179: User said '179'
+Turn 180: LLM said 'fizz' (expected 'fizz')
+Turn 181: User said '181'
+Turn 182: LLM said '182' (expected 'buzz')
+FAILED at turn 182!
+Expected: buzz
+ Got: 182
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=5, buzz=7
+============================================================
+claude-opus-4-6: 181 correct turns
+============================================================

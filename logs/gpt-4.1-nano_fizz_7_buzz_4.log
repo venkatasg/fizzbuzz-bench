@@ -1,0 +1,19 @@
+Fizzbuzz LLM Benchmark - OpenAI Responses API
+============================================================
+Game Rules: fizz=7, buzz=4
+============================================================
+Testing gpt-4.1-nano
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said '3'
+Turn 4: LLM said '4' (expected 'buzz')
+FAILED at turn 4!
+Expected: buzz
+ Got: 4
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=7, buzz=4
+============================================================
+gpt-4.1-nano: 3 correct turns
+============================================================

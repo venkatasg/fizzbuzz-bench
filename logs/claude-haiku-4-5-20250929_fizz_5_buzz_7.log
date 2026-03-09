@@ -1,0 +1,14 @@
+Fizzbuzz LLM Benchmark - Anthropic Messages API
+============================================================
+Game Rules: fizz=5, buzz=7
+============================================================
+Testing claude-haiku-4-5-20250929
+Turn 1: User said 1
+ERROR at turn 2: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-haiku-4-5-20250929'}, 'request_id': 'req_011CY6XWrwVcj626YPQ8t6VK'}
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=5, buzz=7
+============================================================
+claude-haiku-4-5-20250929: 1 correct turns
+============================================================

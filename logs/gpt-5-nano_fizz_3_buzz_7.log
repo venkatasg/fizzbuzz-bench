@@ -1,0 +1,51 @@
+Fizzbuzz LLM Benchmark - OpenAI Responses API
+============================================================
+Game Rules: fizz=3, buzz=7
+============================================================
+Testing gpt-5-nano
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said '5'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said 'buzz'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said '10' (expected '10')
+Turn 11: User said '11'
+Turn 12: LLM said 'fizz' (expected 'fizz')
+Turn 13: User said '13'
+Turn 14: LLM said 'buzz' (expected 'buzz')
+Turn 15: User said 'fizz'
+Turn 16: LLM said '16' (expected '16')
+Turn 17: User said '17'
+Turn 18: LLM said 'fizz' (expected 'fizz')
+Turn 19: User said '19'
+Turn 20: LLM said '20' (expected '20')
+Turn 21: User said 'fizzbuzz'
+Turn 22: LLM said '22' (expected '22')
+Turn 23: User said '23'
+Turn 24: LLM said 'fizz' (expected 'fizz')
+Turn 25: User said '25'
+Turn 26: LLM said '26' (expected '26')
+Turn 27: User said 'fizz'
+Turn 28: LLM said 'buzz' (expected 'buzz')
+Turn 29: User said '29'
+Turn 30: LLM said 'fizz' (expected 'fizz')
+Turn 31: User said '31'
+Turn 32: LLM said '32' (expected '32')
+Turn 33: User said 'fizz'
+Turn 34: LLM said '34' (expected '34')
+Turn 35: User said 'buzz'
+Turn 36: LLM said '29' (expected 'fizz')
+FAILED at turn 36!
+Expected: fizz
+ Got: 29
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=7
+============================================================
+gpt-5-nano: 35 correct turns
+============================================================

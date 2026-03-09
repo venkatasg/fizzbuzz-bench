@@ -1,0 +1,14 @@
+Fizzbuzz LLM Benchmark - Google Gemini API
+============================================================
+Game Rules: fizz=7, buzz=4
+============================================================
+Testing gemma-3-27b
+Turn 1: User said 1
+ERROR at turn 2: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemma-3-27b is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=7, buzz=4
+============================================================
+gemma-3-27b: 1 correct turns
+============================================================
