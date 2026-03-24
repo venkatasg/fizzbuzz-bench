@@ -6,10 +6,12 @@ Supports custom base URLs for local models (vLLM, transformers serve, etc.)
 import argparse
 import os
 from openai import OpenAI
-import ipdb
 from utils import log_print, get_fizzbuzz_response
 
-def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz_num: int = 5) -> int:
+
+def run_fizzbuzz_game(
+    client, log_file, model_name: str, fizz_num: int = 3, buzz_num: int = 5
+) -> int:
     """
     Run a Fizzbuzz game with an LLM and return the turn number where it failed.
     Returns 0 if it fails on the first turn, or the turn number of the last correct answer.
@@ -26,7 +28,7 @@ def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz
 
     messages = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": "1"}
+        {"role": "user", "content": "1"},
     ]
 
     turn = 2  # LLM should respond with turn 2
@@ -34,14 +36,16 @@ def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz
     while True:
         try:
             response = client.chat.completions.create(
-                model=model_name,
-                messages=messages
+                model=model_name, messages=messages
             )
             llm_response = response.choices[0].message.content
 
             expected = get_fizzbuzz_response(turn, fizz_num, buzz_num)
 
-            log_print(f"Turn {turn}: LLM said '{llm_response}' (expected '{expected}')", log_file)
+            log_print(
+                f"Turn {turn}: LLM said '{llm_response}' (expected '{expected}')",
+                log_file,
+            )
 
             # Normalize responses for comparison (case-insensitive)
             llm_normalized = llm_response.lower().strip()
@@ -59,7 +63,7 @@ def run_fizzbuzz_game(client, log_file, model_name: str, fizz_num: int = 3, buzz
             user_response = get_fizzbuzz_response(turn, fizz_num, buzz_num)
             messages.append({"role": "user", "content": user_response})
 
-            log_print(f"Turn {turn}: User said '{user_response}'", log_file)
+            log_print(f"Turn {turn}: User said {user_response}", log_file)
 
             turn += 1
 
@@ -80,41 +84,38 @@ def main():
             python fizzbuzz_openai_chat.py --model gpt-4.1
             python fizzbuzz_openai_chat.py --model gpt-4.1 --fizz 2 --buzz 7
             python fizzbuzz_openai_chat.py --model my-local-model --base-url http://localhost:8000/v1
-               """
+               """,
     )
     parser.add_argument(
         "--fizz",
         type=int,
         default=3,
         dest="fizz_num",
-        help="Number for 'fizz' (default: 3)"
+        help="Number for 'fizz' (default: 3)",
     )
     parser.add_argument(
         "--buzz",
         type=int,
         default=5,
         dest="buzz_num",
-        help="Number for 'buzz' (default: 5)"
+        help="Number for 'buzz' (default: 5)",
     )
     parser.add_argument(
-        "--model",
-        type=str,
-        default="gpt-4.1",
-        help="Model to use (default: gpt-4.1)"
+        "--model", type=str, default="gpt-4.1", help="Model to use (default: gpt-4.1)"
     )
     parser.add_argument(
         "--base-url",
         type=str,
         default=None,
-        help="Custom base URL for local models (e.g., http://localhost:8000/v1)"
+        help="Custom base URL for local models (e.g., http://localhost:8000/v1)",
     )
 
     args = parser.parse_args()
 
-    os.makedirs('logs', exist_ok=True)
+    os.makedirs("logs", exist_ok=True)
 
     log_filename = f"logs/{args.model.replace('/', '_')}_fizz_{args.fizz_num}_buzz_{args.buzz_num}.log"
-    log_file = open(log_filename, 'w')
+    log_file = open(log_filename, "w")
 
     log_print("Fizzbuzz LLM Benchmark - OpenAI Chat Completions API", log_file)
     log_print("=" * 60, log_file)
@@ -123,34 +124,25 @@ def main():
 
     if args.base_url:
         # Local model with custom base URL
-        client = OpenAI(
-            base_url=args.base_url
-        )
+        client = OpenAI(base_url=args.base_url)
     else:
         # OpenAI API
-        with open('../../Research/openai.txt', 'r') as f:
+        with open("../../Research/openai.txt", "r") as f:
             api_key = f.read().strip()
         client = OpenAI(api_key=api_key)
 
     score = run_fizzbuzz_game(
-        client,
-        log_file,
-        args.model,
-        args.fizz_num,
-        args.buzz_num
+        client, log_file, args.model, args.fizz_num, args.buzz_num
     )
 
-    log_print(f"\n{'='*60}", log_file)
+    log_print(f"\n{'=' * 60}", log_file)
     log_print("FINAL RESULTS", log_file)
     log_print(f"Game Rules: fizz={args.fizz_num}, buzz={args.buzz_num}", log_file)
-    log_print('='*60, log_file)
+    log_print("=" * 60, log_file)
     log_print(f"{args.model}: {score} correct turns", log_file)
-    log_print('='*60, log_file)
+    log_print("=" * 60, log_file)
 
     log_file.close()
-
-    with open('RESULTS.log', 'a') as f:
-        f.write(f"{args.model}: {score} correct turns for fizz:{args.fizz_num} and buzz: {args.buzz_num}\n")
 
 
 if __name__ == "__main__":
