@@ -1,16 +1,23 @@
-Fizzbuzz LLM Benchmark - Together AI API
+Fizzbuzz LLM Benchmark - OpenAI Responses API
 ============================================================
-Game Rules: fizz=3, buzz=5
+Game Rules: fizz=3, buzz=7
 ============================================================
-Testing Qwen/Qwen3.5-397B-A17B
+Testing gpt-5.4-mini
 Turn 1: User said 1
 Turn 2: LLM said '2' (expected '2')
 Turn 3: User said 'fizz'
-ERROR at turn 4: Error code: 503 - {'id': 'oaQfdqy-2dTqGa-9d9cc3656ea10f9b', 'error': {'message': 'Service unavailable', 'type': 'service_unavailable', 'param': None, 'code': None}}
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said '5'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said 'buzz'
+Turn 8: LLM said 'buzz' (expected '8')
+FAILED at turn 8!
+Expected: 8
+ Got: buzz
 
 ============================================================
 FINAL RESULTS
-Game Rules: fizz=3, buzz=5
+Game Rules: fizz=3, buzz=7
 ============================================================
-Qwen/Qwen3.5-397B-A17B: 3 correct turns
+gpt-5.4-mini: 7 correct turns
 ============================================================

@@ -1,0 +1,14 @@
+Fizzbuzz LLM Benchmark - Mistral  API
+============================================================
+Game Rules: fizz=3, buzz=7
+============================================================
+Testing ministral-14b-2512
+Turn 1: User said 1
+ERROR at turn 2: Chat.complete() got an unexpected keyword argument 'reasoning_effort'
+
+============================================================
+FINAL RESULTS
+Game Rules: fizz=3, buzz=7
+============================================================
+ministral-14b-2512: 1 correct turns
+============================================================

@@ -7,6 +7,7 @@ import argparse
 import os
 from openai import OpenAI
 from utils import log_print, get_fizzbuzz_response
+from dotenv import load_dotenv
 
 
 def run_fizzbuzz_game(
@@ -23,13 +24,8 @@ def run_fizzbuzz_game(
     """
     log_print(f"Testing {model_name}", log_file)
 
-    instructions = f"""You are playing FizzBuzz with the following rules:
-    - If a number is divisible by {fizz_num}, say 'fizz'
-    - If a number is divisible by {buzz_num}, say 'buzz'
-    - If a number is divisible by both {fizz_num} and {buzz_num}, say 'fizzbuzz'
-    - Otherwise, say the number itself
-
-    I will give you a number, and you must respond with the NEXT number (or word) in the sequence following these rules. Respond with ONLY the answer - just the number, 'fizz', 'buzz', or 'fizzbuzz'. No explanations, no additional text, no punctuation."""
+    with open("SYSTEM_PROMPT.md", "r") as f:
+        instructions = f.read().strip().format(fizz_num=fizz_num, buzz_num=buzz_num)
 
     # Build conversation as array of messages for Responses API
     messages = [{"role": "user", "content": "1"}]
@@ -43,6 +39,7 @@ def run_fizzbuzz_game(
                 model=model_name,
                 instructions=instructions,
                 input=messages,
+                reasoning={"effort": "high"},
             )
             llm_response = response.output_text
 
@@ -108,7 +105,7 @@ Examples:
     parser.add_argument(
         "--turns",
         type=int,
-        default=100,
+        default=200,
         dest="max_turns",
         help="Maximum number of turns to run game for",
     )
@@ -128,9 +125,8 @@ Examples:
     log_print(f"Game Rules: fizz={args.fizz_num}, buzz={args.buzz_num}", log_file)
     log_print("=" * 60, log_file)
 
-    with open("../../Research/openai.txt", "r") as f:
-        api_key = f.read().strip()
-    client = OpenAI(api_key=api_key)
+    load_dotenv()
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     score = run_fizzbuzz_game(
         client=client,

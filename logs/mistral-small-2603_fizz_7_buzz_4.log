@@ -1,16 +1,19 @@
-Fizzbuzz LLM Benchmark - Together AI API
+Fizzbuzz LLM Benchmark - Mistral  API
 ============================================================
-Game Rules: fizz=3, buzz=5
+Game Rules: fizz=7, buzz=4
 ============================================================
-Testing Qwen/Qwen3.5-397B-A17B
+Testing mistral-small-2603
 Turn 1: User said 1
 Turn 2: LLM said '2' (expected '2')
-Turn 3: User said 'fizz'
-ERROR at turn 4: Error code: 503 - {'id': 'oaQfdqy-2dTqGa-9d9cc3656ea10f9b', 'error': {'message': 'Service unavailable', 'type': 'service_unavailable', 'param': None, 'code': None}}
+Turn 3: User said '3'
+Turn 4: LLM said '4' (expected 'buzz')
+FAILED at turn 4!
+Expected: buzz
+ Got: 4
 
 ============================================================
 FINAL RESULTS
-Game Rules: fizz=3, buzz=5
+Game Rules: fizz=7, buzz=4
 ============================================================
-Qwen/Qwen3.5-397B-A17B: 3 correct turns
+mistral-small-2603: 3 correct turns
 ============================================================
