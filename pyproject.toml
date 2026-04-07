@@ -3,11 +3,14 @@ name = "fizzbuzz-bench"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
-    "anthropic>=0.75.0",
-    "google-genai>=1.0.0",
-    "ipdb>=0.13.13",
-    "mistralai>=2.0.4",
-    "openai>=2.11.0",
-    "python-dotenv>=1.2.2",
-    "together>=1.5.31",
+    "llm",
+    "llm-anthropic",
+    "llm-gemini",
+    "llm-together",
+    "llm-openrouter",
+    "llm-mistral",
+    "llm-deepseek",
+    "llm-moonshot",
+    "llm-zhipu",
+    "python-dotenv",
 ]
