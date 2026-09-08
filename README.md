@@ -29,12 +29,30 @@ final_score = 0.2 * easy + 0.35 * medium + 0.45 * hard
 Ensure you have API keys setup as environment variables (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, etc):
 
 ```bash
-# Standard game for 100 turns
-python fizzbuzz_anthropic.py
+# Standard game for 200 turns
+python fizzbuzz.py --model claude-sonnet-4-5-20250929 --reasoning
 
-# Use 7 for fizz and 4 for buzz and play for 200 turns
-python fizzbuzz_anthropic.py --fizz 7 --buzz 4 --turns 200
+# Use 7 for fizz and 4 for buzz and play for 100 turns
+python fizzbuzz.py --model gpt-4.1 --fizz 7 --buzz 4 --turns 100
 ```
+
+### Local models
+
+Pass a Chat Completions URL to `--model` and the benchmark plays against a
+locally served model instead — vLLM, llama.cpp, LM Studio, Ollama, anything with
+an OpenAI-compatible endpoint. No plugin and no API key needed; the endpoint is
+asked which model it serves, and that name is what gets logged and scored:
+
+```bash
+# vLLM's default endpoint
+python fizzbuzz.py --model http://localhost:8000/v1
+
+# Ollama — the /v1 is optional, and '#' picks one when several are served
+python fizzbuzz.py --model http://localhost:11434#qwen3:8b --fizz 7 --buzz 4
+```
+
+Set `LOCAL_API_KEY` if your server checks the `Authorization` header. Everything
+else — `--fizz`, `--buzz`, `--turns`, `--reasoning`, the logs — works the same.
 
 You can view the raw turn-based conversation for every model in the `logs/` folder.
 
