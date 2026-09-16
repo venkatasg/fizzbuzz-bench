@@ -16,7 +16,7 @@ By customizing `fizz_num` and `buzz_num`, we can test whether LLMs generalize to
 
 - *Easy*: standard FizzBuzz.
 - *Medium*: `buzz_num` is 7.
-- *Hard*: `fizz_num` is 7, `buzz_num` is 5.
+- *Hard*: `fizz_num` is 7, `buzz_num` is 4.
 
 The score at each level is normalized to 100, and a final composite score out of 100 is calculated to reward good generalization performance:
 
@@ -53,6 +53,50 @@ python fizzbuzz.py --model http://localhost:11434#qwen3:8b --fizz 7 --buzz 4
 
 Set `LOCAL_API_KEY` if your server checks the `Authorization` header. Everything
 else — `--fizz`, `--buzz`, `--turns`, `--reasoning`, the logs — works the same.
+
+#### Running open-weight models with llama.cpp
+
+The open-weight results below were produced with a CUDA build of
+[llama.cpp](https://github.com/ggml-org/llama.cpp) serving GGUF quantizations,
+with the three difficulty levels running in parallel against one server:
+
+```bash
+llama-server -m Qwen3.8-27B-UD-Q8_K_XL.gguf --alias Qwen3.8-27B-UD-Q8_K_XL \
+    --port 8081 --jinja --reasoning-format deepseek -np 3 -c 196608 -n -1 \
+    --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0 \
+    --chat-template-kwargs '{"preserve_thinking": false}'
+
+python fizzbuzz.py --model http://127.0.0.1:8081/v1 --reasoning              # easy
+python fizzbuzz.py --model http://127.0.0.1:8081/v1 --reasoning --buzz 7     # medium
+python fizzbuzz.py --model http://127.0.0.1:8081/v1 --reasoning --fizz 7 --buzz 4  # hard
+```
+
+`--alias` sets the model name that ends up in the log filename. Sampling
+parameters are the model card's recommended thinking-mode settings.
+
+**Qwen3.8 needs `preserve_thinking: false`.** The `llm` library does not send a
+model's previous `reasoning_content` back with the conversation, and Qwen3.8's
+chat template (with its default `preserve_thinking: true`) then renders every
+earlier assistant turn as an empty `<think></think>` block. The model imitates
+that pattern and stops thinking after the first turn, scoring 3/9/27 instead of
+69/45/83. Disabling `preserve_thinking` renders history as plain text, which is
+also how hosted APIs behave. Qwen3.8's template also promotes
+`reasoning_effort: high` to `xhigh`, so `--reasoning` already gives it the
+maximum effort. Nemotron 3.5's template writes `<think></think>` into history by
+design and keeps thinking, so it needs no extra flags.
+
+Best observed scores for local runs (multiple attempts per level, same as the
+hosted models; see the FAQ on reproducibility):
+
+| Model | Quant | Easy | Medium | Hard | Score |
+|---|---|---|---|---|---|
+| Qwen3.8-Flash-Next (125B-A6B) | unsloth UD-Q4_K_XL | 11 | 93 | 147 | 50.5 |
+| Qwen3.8-27B | unsloth UD-Q8_K_XL | 69 | 45 | 83 | 33.5 |
+| Nemotron 3.5 Lightning (30B-A3B) | ggml-org Q8_0 | 33 | 15 | 3 | 6.6 |
+
+Both Qwen models fail the *easy* level the same way — answering with the bare
+number (`6`, `12`) where `fizz` or `buzz` is due — while playing the custom
+rules far more carefully.
 
 You can view the raw turn-based conversation for every model in the `logs/` folder.
 

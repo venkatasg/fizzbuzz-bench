@@ -1,0 +1,34 @@
+Fizzbuzz LLM Benchmark
+============================================================
+Model: Nemotron-3.5-Lightning-30B-A3B-Q8_0
+Endpoint: http://127.0.0.1:8082/v1
+Game Rules: fizz=3, buzz=7
+============================================================
+Testing Nemotron-3.5-Lightning-30B-A3B-Q8_0
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said '5'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said 'buzz'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said '10' (expected '10')
+Turn 11: User said '11'
+Turn 12: LLM said 'fizz' (expected 'fizz')
+Turn 13: User said '13'
+Turn 14: LLM said 'buzz' (expected 'buzz')
+Turn 15: User said 'fizz'
+Turn 16: LLM said 'buzz' (expected '16')
+FAILED at turn 16!
+Expected: 16
+ Got: buzz
+
+============================================================
+FINAL RESULTS
+Model: Nemotron-3.5-Lightning-30B-A3B-Q8_0
+Game Rules: fizz=3, buzz=7
+============================================================
+Nemotron-3.5-Lightning-30B-A3B-Q8_0: 15 correct turns
+============================================================

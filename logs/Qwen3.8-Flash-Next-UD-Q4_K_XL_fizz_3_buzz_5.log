@@ -1,0 +1,30 @@
+Fizzbuzz LLM Benchmark
+============================================================
+Model: Qwen3.8-Flash-Next-UD-Q4_K_XL
+Endpoint: http://127.0.0.1:8083/v1
+Game Rules: fizz=3, buzz=5
+============================================================
+Testing Qwen3.8-Flash-Next-UD-Q4_K_XL
+Turn 1: User said 1
+Turn 2: LLM said '2' (expected '2')
+Turn 3: User said 'fizz'
+Turn 4: LLM said '4' (expected '4')
+Turn 5: User said 'buzz'
+Turn 6: LLM said 'fizz' (expected 'fizz')
+Turn 7: User said '7'
+Turn 8: LLM said '8' (expected '8')
+Turn 9: User said 'fizz'
+Turn 10: LLM said 'buzz' (expected 'buzz')
+Turn 11: User said '11'
+Turn 12: LLM said '12' (expected 'fizz')
+FAILED at turn 12!
+Expected: fizz
+ Got: 12
+
+============================================================
+FINAL RESULTS
+Model: Qwen3.8-Flash-Next-UD-Q4_K_XL
+Game Rules: fizz=3, buzz=5
+============================================================
+Qwen3.8-Flash-Next-UD-Q4_K_XL: 11 correct turns
+============================================================
