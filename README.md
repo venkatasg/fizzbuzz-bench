@@ -86,13 +86,40 @@ maximum effort. Nemotron 3.5's template writes `<think></think>` into history by
 design and keeps thinking, so it needs no extra flags.
 
 Best observed scores for local runs (multiple attempts per level, same as the
-hosted models; see the FAQ on reproducibility):
+hosted models; see the FAQ on reproducibility). Each model was run at two
+precisions, and the score below is the best observed per level, with the
+quantization that produced it in brackets:
 
-| Model | Quant | Easy | Medium | Hard | Score |
-|---|---|---|---|---|---|
-| Qwen3.8-Flash-Next (125B-A6B) | unsloth UD-Q4_K_XL | 11 | 93 | 147 | 50.5 |
-| Qwen3.8-27B | unsloth UD-Q8_K_XL | 69 | 45 | 83 | 33.5 |
-| Nemotron 3.5 Lightning (30B-A3B) | ggml-org Q8_0 | 33 | 15 | 3 | 6.6 |
+| Model | Easy | Medium | Hard | Score |
+|---|---|---|---|---|
+| Qwen3.8-Flash-Next (125B-A6B) | 93 [Q8_0] | 93 [Q4_K_XL] | 147 [Q4_K_XL] | 58.7 |
+| Qwen3.8-27B (dense) | 69 [Q8_K_XL] | 45 [Q8_K_XL] | 83 [Q8_K_XL] | 33.5 |
+| Nemotron 3.5 Lightning (30B-A3B) | 39 [BF16] | 39 [BF16] | 39 [BF16] | 19.5 |
+
+Quantizations are unsloth's for the Qwen models and ggml-org's for Nemotron.
+Nemotron's three scores of 39 are a coincidence, not a bug: three different
+mistakes that each happened to land on turn 40.
+
+**Full precision is not worth the VRAM here.** Each model was also run at the
+largest precision that fits on two 48 GB cards, and the result went in a
+different direction for each one:
+
+| Model | Precision | Size | Easy | Medium | Hard | Score |
+|---|---|---|---|---|---|---|
+| Qwen3.8-Flash-Next | UD-Q4_K_XL | 111 GB | 11 | 93 | 147 | 50.5 |
+| Qwen3.8-Flash-Next | Q8_0 | 188 GB | 93 | 63 | 105 | 44.0 |
+| Qwen3.8-27B | UD-Q8_K_XL | 31.5 GB | 69 | 45 | 83 | 33.5 |
+| Qwen3.8-27B | BF16 (full) | 54.7 GB | 55 | 35 | 11 | 14.1 |
+| Nemotron 3.5 Lightning | Q8_0 | 33.6 GB | 33 | 15 | 3 | 6.6 |
+| Nemotron 3.5 Lightning | BF16 (full) | 63.2 GB | 39 | 39 | 39 | 19.5 |
+
+Qwen3.8-27B scores worse at BF16, Nemotron scores better, and Flash-Next splits
+(its Q8_0 is far better on easy and worse on the other two). The reason is that
+run-to-run variance dwarfs any precision effect: across attempts with identical
+weights, Qwen3.8-27B's Q8 hard score was 35, 67 and 83, Nemotron's BF16 medium
+was 3, 3 and 39, and Flash-Next's Q8 easy was 5 and 93. At two or three attempts
+per cell this benchmark cannot resolve a difference between quantizations.
+Flash-Next has no full-precision row because its BF16 weights are ~250 GB.
 
 Both Qwen models fail the *easy* level the same way — answering with the bare
 number (`6`, `12`) where `fizz` or `buzz` is due — while playing the custom
