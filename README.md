@@ -40,7 +40,7 @@ You can view the raw turn-based conversation for every model in the `logs/` fold
 
 ## Leaderboard
 
-You can view the leaderboard at [venkatasg.net/fizzbuzz-bench](https://venkatasg.net/fizzbuzz-bench/).
+You can view the leaderboard at [venkatasg.net/projects/fizzbuzz-bench](https://venkatasg.net/projects/fizzbuzz-bench).
 
 
 ## FAQs
